@@ -29,7 +29,7 @@ $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
     <title>Materia y Maestro Asignados</title>
     <link href="/dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 p-8 text-center">
+<body class="bg-gray-100 p-8 text-center ml-4">
     <h2 class="text-3xl font-semibold mb-4">Materia y Maestro Asignados</h2>
     <?php if ($resultado) : ?>
         <p class="text-green-600 mb-2">Tu materia asignada es: <span class="font-semibold"><?php echo $resultado['materia_nombre']; ?></span></p>

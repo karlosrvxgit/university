@@ -37,40 +37,73 @@ if ($materia) {
 <head>
     <title>Panel de Maestro</title>
     <link href="/dist/output.css" rel="stylesheet">
+
+    <style>
+        /* Estilos adicionales si es necesario */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 20%;
+            background-color: #2d3748;
+            color: #ffffff;
+        }
+
+        .content {
+            margin-left: 20%; /* Ancho del sidebar */
+            padding: 20px;
+        }
+
+        .dynamic-content {
+            width: 80%; /* Ancho del contenido dinámico */
+            margin-left: 20%;
+            padding: 20px;
+        }
+
+        .menu-item:hover {
+            background-color: #4a5568;
+        }
+    </style>
+   
 </head>
 
 <body class="flex h-screen bg-gray-100">
     <!-- Sidebar -->
-    <div class="bg-gray-800 text-white h-screen w-1/5 p-4">
+    <div class="sidebar p-4">
         <h2 class="text-2xl font-semibold mb-4">Maestro Panel</h2>
         <ul>
             <li class="mb-2">
-                <label class="hover:text-yellow-400">Inicio</label>
+                <label class="menu-item">Inicio</label>
             </li>
             <li class="mb-2">
-            <a href="#" class="hover:text-yellow-400">Materia Asignada</a>
-                <label class="hover:text-yellow-400">Materia Asignda</label>
-                <ul class="ml-4 group-hover:block #">
-                <li><a href="#" class="hover:text-yellow-400" onclick="loadContent('/maestro/materia_asignada.php')">Materia Asignada</a></li>
-
-                    <!-- <li class="hover:bg-gray-700 py-2"><a href="">Materia Asignada</a></li> -->
-                    <li class="hover:bg-gray-700 py-2"><a href="/maestro/lista_alumnos.php">Listar Alumnos</a></li>
+                <label class="menu-item">Materia Asignada</label>
+                <ul class="ml-8">
+                    <li><a href="#" class="menu-item" onclick="loadContent('/maestro/materia_asignada.php')">Ver Materia Asignada</a></li>
+                    <li><a href="#" class="menu-item" onclick="loadContent('/maestro/lista_alumnos.php')">Listar Alumnos</a></li>
+                    <!-- <li><a href="/maestro/lista_alumnos.php" class="menu-item">Listar Alumnos</a></li> -->
                 </ul>
             </li>
         </ul>
 
-        
         <br>
-        <a href="/cerrar_sesion.php">Cerrar sesión</a>
+        <a href="/cerrar_sesion.php" class="text-yellow-400">Cerrar sesión</a>
+    </div>
 
-        <script>
+    <!-- Contenido dinámico -->
+    <div class="content">
+        <div class="dynamic-content">
+            <!-- Contenido dinámico cargado por JavaScript -->
+        </div>
+    </div>
+
+    <script>
         function loadContent(page) {
-           
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    // Inserta el contenido cargado en el div con id "dynamic-content"
-                    document.getElementById("dynamic-content").innerHTML = this.responseText;
+                    // Inserta el contenido cargado en el contenedor "dynamic-content"
+                    document.querySelector('.dynamic-content').innerHTML = this.responseText;
                 }
             };
             xhttp.open("GET", page, true);
@@ -78,5 +111,6 @@ if ($materia) {
         }
     </script>
 </body>
+
 
 </html>

@@ -35,30 +35,44 @@ $stmnt->execute();
 $faltantes = $stmnt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-<h2>Materias Inscritas</h2>
-<table border="1">
-    <thead>
-        <tr>
-            <th>Materia</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-        // session_start();
-        foreach ($inscritas as $inscrita) {
-        ?>
-            <tr>
-                <td><?= $inscrita['materia_nombre'] ?></td>
-                <td>
-                    <form action="/handle_db/alumno/retirar_materia.php" method="post">
-                        <input type="number" hidden value="<?= $inscrita["materia_id"] ?>" name="materia_id">
-                        <button type="submit">Darse de baja</button>
-                    </form>
-                </td>
-            </tr>
-        <?php
-        }
-        ?>
-    </tbody>
-</table>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded shadow-md">
+        <h2 class="text-2xl font-semibold mb-4">Materias Inscritas</h2>
+
+        <table class="w-full border border-gray-300">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="border px-4 py-2">Materia</th>
+                    <th class="border px-4 py-2">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($inscritas as $inscrita) { ?>
+                    <tr>
+                        <td class="border px-4 py-2"><?= $inscrita['materia_nombre'] ?></td>
+                        <td class="border px-4 py-2">
+                            <form action="/handle_db/alumno/retirar_materia.php" method="post">
+                                <input type="hidden" value="<?= $inscrita["materia_id"] ?>" name="materia_id">
+                                <button type="submit" class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-trash-alt"></i>
+                            </form>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

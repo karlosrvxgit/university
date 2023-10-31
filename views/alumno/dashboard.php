@@ -47,22 +47,23 @@ $faltantes = $stmnt->fetchAll(PDO::FETCH_ASSOC);
 
 <body class="flex h-screen bg-gray-100">
     <!--Sidebar -->
-    <div class="bg-gray-800 text-white h-screen w-1/5 p-4">
+    <div class="bg-gray-800 text-white h-screen w-1/5 sidebar p-4">
         <h2 class="text-2xl font-semibold mb-4">Alumno Panel</h2>
         <ul>
             <li class="mb-2">
-                <label class="hover:text-yellow-400">Inicio</label>
+                <label class="menu-item">Inicio</label>
             </li>
             <li class="mb-2">
-                <label class="hover:text-yellow-400">Materias Inscritas</label>
-                <ul class="ml-4 group-hover:block #">
-                    <li class="hover:bg-gray-700 py-2"><a href="/views/alumno/materias_inscritas.php">Materias Inscritas</a></li>
+                <label class="hover:text-yellow-400 menu-item">Materias Inscritas</label>
+                <ul class="ml-8 group-hover:block #">
+                <li><a href="#" class="menu-item" onclick="loadContent('/views/alumno/materias_inscritas.php')">Materias Inscritas</a></li>
                 </ul>
             </li>
             <li class="mb-2">
                 <label class="hover:text-yellow-400">Materias Disponibles</label>
                 <ul class="ml-4 group-hover:block #">
-                    <li class="hover:bg-gray-700 py-2"><a href="/views/alumno/materias_disponibles.php">Materias Disponibles</a></li>
+                <li><a href="#" class="menu-item" onclick="loadContent('/views/alumno/materias_disponibles.php')">Materias Disponibles</a></li>
+                    <!-- <li class="hover:bg-gray-700 py-2"><a href="/views/alumno/materias_disponibles.php">Materias Disponibles</a></li> -->
 
                 </ul>
             </li>
@@ -70,6 +71,27 @@ $faltantes = $stmnt->fetchAll(PDO::FETCH_ASSOC);
         </ul>
         <a href="/cerrar_sesion.php">Cerrar Sesión</a>
     </div>
+
+     <!-- Contenido dinámico -->
+     <div class="content">
+        <div class="dynamic-content">
+            <!-- Contenido dinámico cargado por JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        function loadContent(page) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Inserta el contenido cargado en el contenedor "dynamic-content"
+                    document.querySelector('.dynamic-content').innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", page, true);
+            xhttp.send();
+        }
+    </script>
     
 </body>
 

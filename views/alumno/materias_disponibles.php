@@ -36,29 +36,34 @@ $faltantes = $stmnt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<h2>Materias disponibles:</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/dist/output.css" rel="stylesheet">
+    
+</head>
 
-<?php
-if (count($faltantes) !== 0) {
-?>
-    <form action="/handle_db/alumno/inscribir_materia.php" method="post">
-        <label>Escoge tus materias</label>
-        <select multiple name="materias[]">
+<body class="bg-gray-100 p-4">
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded shadow-md">
+        <h2 class="text-2xl font-semibold mb-4">Materias Disponibles:</h2>
 
-            <?php
-            foreach ($faltantes as $key => $faltante) {
-            ?>
-                <option value="<?= $faltante["materia_id"] ?>">
-                    <?= $faltante["materia_nombre"] ?>
-                </option>
-            <?php
-            }
-            ?>
-        </select>
-        <button type="submit">Inscribirse</button>
-    </form>
-<?php
-} else {
-    echo "<p>Estás inscrito a todas las materias</p>";
-}
-?>
+        <?php if (count($faltantes) !== 0) { ?>
+            <form action="/handle_db/alumno/inscribir_materia.php" method="post" class="mb-4">
+                <label class="block mb-2">Escoge tus materias:</label>
+                <select multiple name="materias[]" class="w-full border p-2 rounded">
+                    <?php foreach ($faltantes as $key => $faltante) { ?>
+                        <option value="<?= $faltante["materia_id"] ?>"><?= $faltante["materia_nombre"] ?></option>
+                    <?php } ?>
+                </select>
+                <button type="submit" class="mt-2 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Inscribirse</button>
+            </form>
+        <?php } else { ?>
+            <p>Estás inscrito a todas las materias</p>
+        <?php } ?>
+    </div>
+</body>
+</html>
+
