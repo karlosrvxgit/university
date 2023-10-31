@@ -28,6 +28,7 @@ $clases = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link href="/dist/output.css" rel="stylesheet">
 </head>
 <body class="bg-gray-800 text-white h-screen w-1/5 p-4">
+<img src="/imagenes/logo.jpg" alt="logo" width="40" class="flex justify-center">
 <h2 class="text-2xl font-semibold mb-4">Alumno Panel</h2>
 <ul>
     <li class="mb-2">

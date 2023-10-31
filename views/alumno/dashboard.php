@@ -48,6 +48,7 @@ $faltantes = $stmnt->fetchAll(PDO::FETCH_ASSOC);
 <body class="flex h-screen bg-gray-100">
     <!--Sidebar -->
     <div class="bg-gray-800 text-white h-screen w-1/5 sidebar p-4">
+    <img src="/imagenes/logo.jpg" alt="logo" width="40" class="flex justify-center">
         <h2 class="text-2xl font-semibold mb-4">Alumno Panel</h2>
         <ul>
             <li class="mb-2">
@@ -63,7 +64,6 @@ $faltantes = $stmnt->fetchAll(PDO::FETCH_ASSOC);
                 <label class="hover:text-yellow-400">Materias Disponibles</label>
                 <ul class="ml-4 group-hover:block #">
                 <li><a href="#" class="menu-item" onclick="loadContent('/views/alumno/materias_disponibles.php')">Materias Disponibles</a></li>
-                    <!-- <li class="hover:bg-gray-700 py-2"><a href="/views/alumno/materias_disponibles.php">Materias Disponibles</a></li> -->
 
                 </ul>
             </li>

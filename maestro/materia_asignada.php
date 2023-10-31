@@ -25,20 +25,20 @@ $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Materia y Maestro Asignados</title>
     <link href="/dist/output.css" rel="stylesheet">
 </head>
+
 <body class="bg-gray-100 p-8 text-center ml-4">
     <h2 class="text-3xl font-semibold mb-4">Materia y Maestro Asignados</h2>
     <?php if ($resultado) : ?>
-        <p class="text-green-600 mb-2">Tu materia asignada es: <span class="font-semibold"><?php echo $resultado['materia_nombre']; ?></span></p>
-        <p class="text-green-600">El maestro asignado es: <span class="font-semibold"><?php echo $resultado['nombre_maestro']; ?></span></p>
+        <p class="text-green-600 mb-2">Tu materia asignada es: <span class="font-semibold text-blue-600"><?php echo $resultado['materia_nombre']; ?></span></p>
+        <p class="text-green-600">El maestro asignado es: <span class="font-semibold text-blue-600"><?php echo $resultado['nombre_maestro']; ?></span></p>
     <?php else : ?>
         <p class="text-red-600 mt-4">No estás asignado a ninguna materia o no se encontró información del maestro.</p>
     <?php endif; ?>
 </body>
 
 </html>
-
-

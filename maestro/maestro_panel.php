@@ -71,6 +71,7 @@ if ($materia) {
 <body class="flex h-screen bg-gray-100">
     <!-- Sidebar -->
     <div class="sidebar p-4">
+    <img src="/imagenes/logo.jpg" alt="logo" width="40" class="flex justify-center">
         <h2 class="text-2xl font-semibold mb-4">Maestro Panel</h2>
         <ul>
             <li class="mb-2">
