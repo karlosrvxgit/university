@@ -27,6 +27,7 @@
 <body class="flex bg-gray-100">
     <!-- Sidebar -->
     <div class="sidebar bg-gray-800 text-white p-4">
+        <img src="/imagenes/logo.jpg" alt="logo" width="40" class="flex justify-center">
         <h2 class="text-2xl font-semibold mb-4">Admin Panel</h2>
         <ul>
             <li class="mb-2">
