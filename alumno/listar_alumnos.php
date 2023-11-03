@@ -30,6 +30,15 @@ $alumnos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="/DataTables/datatables.css" />
     <script src="/DataTables/datatables.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.1/css/buttons.dataTables.min.css">
+
+    <script src="https://cdn.datatables.net/buttons/2.1.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
+
 </head>
 
 <body>
@@ -71,7 +80,11 @@ $alumnos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $('#maestrosTable').DataTable({
                     "language": {
                         "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json" // Traducción al español
-                    }
+                    },
+                    "dom": 'Bfrtip', 
+                    "buttons": [
+                        'excel', 'pdf', 'print' 
+                    ]
                 });
             });
         </script>

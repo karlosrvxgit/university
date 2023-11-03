@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-11-2023 a las 15:10:04
+-- Tiempo de generación: 03-11-2023 a las 15:47:51
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -163,7 +163,7 @@ INSERT INTO `maestros` (`id`, `nombre`, `clases_asignadas`) VALUES
 (7, 'hernan contreras', 'programacion'),
 (10, 'Ronaald Suares', 'Geografia'),
 (11, 'Pool Casinagua', 'Geometria'),
-(13, 'Rosa Flores', 'Religión ');
+(13, 'Rosa Florez', 'Religión ');
 
 -- --------------------------------------------------------
 
