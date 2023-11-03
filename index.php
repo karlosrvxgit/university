@@ -7,10 +7,29 @@
     <title>UNIVERSITY</title>
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <style>
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .animate-fade-in-out {
+            animation: fadeInOut 6s infinite;
+        }
+    </style>
 </head>
 
 <body class="min-h-screen flex flex-col items-center justify-center bg-yellow-100">
-    <div class="flex-initial w-80 mb-2">
+    <div class="w-full md:w-80 mb-8 animate-fade-in-out">
         <img src="/imagenes/logo.jpg" alt="Logo" class="w-full">
     </div>
     <form action="/login/login.php" method="post" class="bg-white rounded-lg shadow-lg max-w-xs w-full p-8">
@@ -33,10 +52,9 @@
             <button type="submit" class="w-32 py-2 bg-yellow-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-500 rounded-full text-white">
                 Ingresar
             </button>
-            <a href="/register/register.php" class="text-sm text-blue-500 hover:underline">Registrarse</a>
         </div>
+        <p class="text-sm text-center text-gray-600">¿No tienes cuenta? <a href="/register/register.php" class="text-blue-500 hover:underline">Regístrate aquí</a></p>
     </form>
 </body>
-
 
 </html>
