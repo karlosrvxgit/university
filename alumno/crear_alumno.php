@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <h1>Crear Alumno</h1>
     <!-- Formulario para crear un nuevo alumno -->
-    <form action="crear_alumno.php" method="POST" class="max-w-xs mx-auto mt-8 p-4 bg-white shadow-md rounded-lg">
+    <form action="/alumno/crear_alumno.php" method="POST" class="max-w-xs mx-auto mt-8 p-4 bg-white shadow-md rounded-lg">
     <div class="mb-4">
         <label for="nombre" class="block text-sm font-medium text-gray-600">Nombre:</label>
         <input type="text" name="nombre" required class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-indigo-300">

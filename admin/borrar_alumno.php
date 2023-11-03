@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     $stmt->execute([$alumno_id]);
 
     // Redirigir de vuelta a la página de listar_alumnos.php 
-    header('Location: /admin/listar_alumnos.php');
+    header('Location: /alumno/listar_alumnos.php');
     exit;
 }
 ?>

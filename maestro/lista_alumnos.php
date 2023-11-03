@@ -44,6 +44,7 @@ if ($materia) {
         <ul class="list-disc list-inside mb-4">
             <?php foreach ($alumnos as $alumno) : ?>
                 <li class="text-green-600"><?php echo $alumno['alumno_nombre']; ?></li>
+                
             <?php endforeach; ?>
         </ul>
     <?php else : ?>

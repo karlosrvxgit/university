@@ -38,6 +38,7 @@ $faltantes = $stmnt->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,12 +46,19 @@ $faltantes = $stmnt->fetchAll(PDO::FETCH_ASSOC);
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="/DataTables/datatables.css" />
+    <script src="/DataTables/datatables.js"></script>
+
 </head>
+
 <body class="bg-gray-100 p-4">
     <div class="max-w-2xl mx-auto bg-white p-6 rounded shadow-md">
         <h2 class="text-2xl font-semibold mb-4">Materias Inscritas</h2>
 
-        <table class="w-full border border-gray-300">
+        <table id="maestrosTable" class="w-full border border-gray-300">
             <thead class="bg-gray-200">
                 <tr>
                     <th class="border px-4 py-2">Materia</th>
@@ -65,13 +73,22 @@ $faltantes = $stmnt->fetchAll(PDO::FETCH_ASSOC);
                             <form action="/handle_db/alumno/retirar_materia.php" method="post">
                                 <input type="hidden" value="<?= $inscrita["materia_id"] ?>" name="materia_id">
                                 <button type="submit" class="text-red-600 hover:text-red-800">
-                                <i class="fas fa-trash-alt"></i>
+                                    <i class="fas fa-trash-alt"></i>
                             </form>
                         </td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
+        <script>
+            $(document).ready(function() {
+                $('#maestrosTable').DataTable({
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json" // Traducción al español
+                    }
+                });
+            });
+        </script>
     </div>
 </body>
 
