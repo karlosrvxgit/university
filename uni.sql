@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-11-2023 a las 14:51:43
+-- Tiempo de generación: 03-11-2023 a las 15:10:04
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -163,7 +163,7 @@ INSERT INTO `maestros` (`id`, `nombre`, `clases_asignadas`) VALUES
 (7, 'hernan contreras', 'programacion'),
 (10, 'Ronaald Suares', 'Geografia'),
 (11, 'Pool Casinagua', 'Geometria'),
-(13, 'Rosa Flores', 'Religión 2');
+(13, 'Rosa Flores', 'Religión ');
 
 -- --------------------------------------------------------
 
@@ -208,7 +208,8 @@ INSERT INTO `maestros_cursos` (`id`, `id_maestro`, `id_curso`) VALUES
 (8, 1, 2),
 (9, 2, 1),
 (10, 2, 3),
-(11, 2, 3);
+(11, 2, 3),
+(12, 2, 3);
 
 -- --------------------------------------------------------
 
@@ -257,8 +258,9 @@ INSERT INTO `materias` (`materia_id`, `materia_nombre`) VALUES
 (8, 'antiguo testamento'),
 (10, 'The book of mormon'),
 (12, 'Python 3'),
-(13, 'Geografia'),
-(14, 'Informática');
+(14, 'Informática'),
+(16, 'Estadística i'),
+(17, 'Estadística 2');
 
 -- --------------------------------------------------------
 
@@ -393,7 +395,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `alumnos_clases`
@@ -417,7 +419,7 @@ ALTER TABLE `clases_maestros`
 -- AUTO_INCREMENT de la tabla `maestros`
 --
 ALTER TABLE `maestros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `maestros_alumnos`
@@ -429,7 +431,7 @@ ALTER TABLE `maestros_alumnos`
 -- AUTO_INCREMENT de la tabla `maestros_cursos`
 --
 ALTER TABLE `maestros_cursos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `maestros_materias`
@@ -441,7 +443,7 @@ ALTER TABLE `maestros_materias`
 -- AUTO_INCREMENT de la tabla `materias`
 --
 ALTER TABLE `materias`
-  MODIFY `materia_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `materia_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`

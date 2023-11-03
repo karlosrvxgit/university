@@ -52,10 +52,10 @@ $maestros = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td class="py-2 px-4"><?php echo $maestro['nombre']; ?></td>
                         <td class="py-2 px-4"><?php echo $maestro['clases_asignadas']; ?></td>
                         <td class="py-2 px-4">
-                            <a href="editar_maestro.php?id=<?php echo $maestro['id']; ?>" class="text-blue-500 hover:underline">
+                            <a href="/admin/editar_maestro.php?id=<?php echo $maestro['id']; ?>" class="text-blue-500 hover:underline">
                                 <i class="fas fa-pencil-alt"></i> <!-- Icono de lápiz -->
                             </a>
-                            <a href="borrar_maestro.php?id=<?php echo $maestro['id']; ?>" class="text-red-500 hover:underline ml-2">
+                            <a href="/admin/borrar_maestro.php?id=<?php echo $maestro['id']; ?>" class="text-red-500 hover:underline ml-2">
                                 <i class="fas fa-trash-alt"></i> <!-- Icono de papelera de reciclaje -->
 
                             </a>
